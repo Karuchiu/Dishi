@@ -2,7 +2,6 @@ package com.kd.dishi.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,6 +11,8 @@ import com.kd.dishi.auth.screens.SignUpScreen
 import com.kd.dishi.auth.screens.SuccessScreen
 import com.kd.dishi.auth.screens.UploadDpScreen
 import com.kd.dishi.auth.screens.WelcomeScreen
+import com.kd.dishi.home.HomeDestination
+import com.kd.dishi.home.HomeScreen
 import kotlinx.coroutines.delay
 
 enum class AuthScreens {
@@ -47,7 +48,7 @@ fun DishiApp() {
         composable(route = AuthScreens.Login.name){
             LoginScreen(
                 loginButtonClick = {
-
+                    navController.navigate(HomeDestination.route)
                 },
                 registerBtnClick = {
                     navController.navigate(AuthScreens.Register.name)
@@ -76,6 +77,14 @@ fun DishiApp() {
             SuccessScreen(){
                 navController.navigate(AuthScreens.Login.name)
             }
+        }
+
+        composable(HomeDestination.route){
+            HomeScreen(
+                onCuratorClick = {},
+                onRecipeClick = {},
+                addRecipeClick = { /*TODO*/ }
+            )
         }
     }
 }
