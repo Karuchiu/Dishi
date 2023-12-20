@@ -14,4 +14,13 @@
     <string name="sign_up">Sign Up</string>
     <string name="create_acc">Create An Account</string>
     <string name="reg_details">Enter Details To Register</string>
+
+    <string name="upload_picture">Upload Your\nProfile Photo</string>
+    <string name="upload_data">This data will be displayed in your account profile for security</string>
+    <string name="next">Next</string>
+
+    <string name="get_started">Get Started</string>
+    <string name="congrats">Congratulations!</string>
+    <string name="ready_profile">Your Profile is Ready To Use</string>
+
 </resources>
