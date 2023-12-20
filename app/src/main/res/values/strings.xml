@@ -23,4 +23,15 @@
     <string name="congrats">Congratulations!</string>
     <string name="ready_profile">Your Profile is Ready To Use</string>
 
+    <string name="find_recipe">Search For A \nRecipe</string>
+    <string name="what_recipe">Find any Recipe</string>
+    <string name="top_curators">Top Curators</string>
+    <string name="top_recipes">Top Recipes</string>
+    <string name="view_more">View More</string>
+    <string name="healthy_food">Healthy Food</string>
+    <string name="vegan_resto">Vegan Resto</string>
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="title_activity_success">Success</string>
+    <string name="full_name">%1$s %2$s</string>
+
 </resources>
