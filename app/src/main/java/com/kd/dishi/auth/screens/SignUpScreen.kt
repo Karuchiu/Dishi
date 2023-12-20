@@ -42,7 +42,10 @@ import com.kd.dishi.components.HaveAccRow
 import com.kd.dishi.ui.theme.LemonMilkFontFamily
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(
+    registerBtnClick:() -> Unit,
+    loginButtonClick: () -> Unit
+) {
     val focusManager = LocalFocusManager.current
 
     var firstName by rememberSaveable {
@@ -178,14 +181,20 @@ fun SignUpScreen() {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            CButton(text = stringResource(id = R.string.sign_up))
+            CButton(
+                text = stringResource(id = R.string.sign_up)
+            ){
+                registerBtnClick()
+            }
 
             CDivider()
 
             HaveAccRow(
                 R.string.have_acc,
                 R.string.sign_in
-            )
+            ){
+                loginButtonClick()
+            }
         }
     }
 }
@@ -193,5 +202,8 @@ fun SignUpScreen() {
 @Preview(showBackground = true, widthDp = 320, heightDp = 640)
 @Composable
 fun SignUPScreenPrev() {
-    SignUpScreen()
+    SignUpScreen(
+        registerBtnClick = {},
+        loginButtonClick = {}
+    )
 }

@@ -42,7 +42,10 @@ import com.kd.dishi.ui.theme.LemonMilkFontFamily
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    loginButtonClick: () -> Unit,
+    registerBtnClick:() -> Unit
+) {
 
     val focusManager = LocalFocusManager.current
 
@@ -121,14 +124,20 @@ fun LoginScreen() {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            CButton(text = stringResource(id = R.string.sign_in))
+            CButton(
+                text = stringResource(id = R.string.sign_in)
+            ){
+                loginButtonClick()
+            }
 
             CDivider()
 
             HaveAccRow(
                 R.string.no_account,
                 R.string.sign_up
-            )
+            ){
+                registerBtnClick()
+            }
         }
     }
 }
@@ -136,5 +145,8 @@ fun LoginScreen() {
 @Preview(showBackground = true, widthDp = 320, heightDp = 640)
 @Composable
 fun LoginScreenPrev() {
-    LoginScreen()
+    LoginScreen(
+        loginButtonClick = {},
+        registerBtnClick = {}
+    )
 }

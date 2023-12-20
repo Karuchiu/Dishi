@@ -19,7 +19,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun HaveAccRow(
     @StringRes acc: Int,
-    @StringRes textBtn: Int
+    @StringRes textBtn: Int,
+    onClick: () -> Unit = {}
 ) {
     Row (
         modifier = Modifier.padding(top = 12.dp, bottom = 48.dp),
@@ -36,7 +37,7 @@ fun HaveAccRow(
         Spacer(modifier = Modifier.weight(1f))
         
         TextButton(
-            onClick = {},
+            onClick = onClick,
         ){
             Text(
                 text = stringResource(textBtn),

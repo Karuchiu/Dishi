@@ -17,8 +17,8 @@ import com.kd.dishi.ui.theme.LemonMilkFontFamily
 
 @Composable
 fun CButton(
-    onClick: () -> Unit = {},
-    text: String
+    text: String,
+    onClick: () -> Unit = {}
 ) {
     Button(
         onClick = onClick,
