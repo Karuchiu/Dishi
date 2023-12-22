@@ -34,4 +34,8 @@
     <string name="title_activity_success">Success</string>
     <string name="full_name">%1$s %2$s</string>
 
+    <string name="curator_profile">Curator Profile</string>
+    <string name="noOfRecipes">%d Recipes</string>
+    <string name="my_recipes">My Recipes</string>
+
 </resources>

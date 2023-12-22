@@ -14,8 +14,8 @@ fun <T> RowItem(
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ){
-        items(count = items.size, key = {it}){
-            content(items[it]){ item ->
+        items(count = items.size, key = {it}){index ->
+            content(items[index]){ item ->
                 onItemClick(item)
             }
         }

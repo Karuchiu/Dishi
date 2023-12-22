@@ -45,8 +45,11 @@ import com.kd.dishi.home.viewmodel.HomeViewModel
 import com.kd.dishi.navigation.NavigationDestination
 
 object HomeDestination : NavigationDestination {
-    override val route = "home"
-    override val titleRes: Int = R.string.app_name
+    override val route: String
+        get() = "home"
+    override val titleRes: Int
+        get() = R.string.app_name
+
 }
 
 /*TODO
