@@ -38,4 +38,16 @@
     <string name="noOfRecipes">%d Recipes</string>
     <string name="my_recipes">My Recipes</string>
 
+    <string name="this_recipe">This recipe</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="ingredient_example">Rice\nOnions\nMeat\nCooking Oil</string>
+    <string name="directions">Directions</string>
+    <string name="directions_example">Cut the onions to smaller sizes.
+        Put them in the cooking pan(sufuria). Add 5 tablespoonfuls of cooking oil.
+        Cook until golden brown. Add meat and simmer(Sijui hii ni nini). Add 5 cups of water. Add
+        Rice. Finish. Serve while hot.
+    </string>
+    <string name="comments">Comments</string>
+    <string name="write_comment">Write your comment here</string>
+
 </resources>

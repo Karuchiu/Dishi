@@ -1,5 +1,7 @@
 package com.kd.dishi.navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavOptions
@@ -17,6 +19,8 @@ import com.kd.dishi.curators.CuratorDestination
 import com.kd.dishi.curators.CuratorScreen
 import com.kd.dishi.home.HomeDestination
 import com.kd.dishi.home.HomeScreen
+import com.kd.dishi.recipes.RecipeDestination
+import com.kd.dishi.recipes.RecipeScreen
 import kotlinx.coroutines.delay
 
 enum class AuthScreens {
@@ -27,6 +31,7 @@ enum class AuthScreens {
     Success
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun DishiApp() {
     val navController = rememberNavController()
@@ -88,7 +93,9 @@ fun DishiApp() {
                 onCuratorClick = {
                     navController.navigate("${CuratorDestination.route}/${it}")
                 },
-                onRecipeClick = {},
+                onRecipeClick = {
+                    navController.navigate("${RecipeDestination.route}/${it}")
+                },
                 addRecipeClick = { /*TODO*/ }
             )
         }
@@ -100,10 +107,21 @@ fun DishiApp() {
             })
         ) {
             CuratorScreen(
-                onRecipeClick = {}
+                onRecipeClick = {
+                    navController.navigate("${RecipeDestination.route}/${it}")
+                }
             ) {
                 navController.navigate(HomeDestination.route)
             }
+        }
+
+        composable(
+            route = RecipeDestination.routeWithArgs,
+            arguments = listOf(navArgument(RecipeDestination.recipeIdArg) {
+                type = NavType.IntType
+            })
+        ) {
+            RecipeScreen(onSubmitReply = {})
         }
     }
 }
