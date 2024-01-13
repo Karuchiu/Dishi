@@ -1,17 +1,29 @@
 package com.kd.dishi.components
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.kd.dishi.R
 import com.kd.dishi.models.Recipe
 
 @Composable
 fun RecipeRow(
     recipes: List<Recipe>,
-    recipeOnClick: (Recipe) -> Unit
+    recipeOnClick: (Recipe) -> Unit = {}
 ) {
-    RowItem(items = recipes, onItemClick = recipeOnClick) { recipe, onRecipeClick ->
-        RecipeCard(recipe = recipe, recipeOnClick = onRecipeClick)
+    LazyRow(
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ){
+
+            items(recipes.size) { index ->
+                RecipeCard(
+                    recipe = recipes[index],
+                    recipeOnClick = recipeOnClick
+                )
+            }
+
     }
 }
 

@@ -42,6 +42,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.*
+import com.kd.dishi.AppVMProvider
 import com.kd.dishi.R
 import com.kd.dishi.components.CommentSection
 import com.kd.dishi.components.DirectionsArea
@@ -61,7 +62,7 @@ object RecipeDestination: NavigationDestination {
 @Composable
 fun RecipeScreen(
     modifier: Modifier = Modifier,
-    viewModel: RecipeViewModel = viewModel(),
+    viewModel: RecipeViewModel = viewModel(factory = AppVMProvider.Factory),
     onSubmitReply:(String) -> Unit
 ) {
     val focusManager = LocalFocusManager.current

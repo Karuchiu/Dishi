@@ -1,5 +1,6 @@
 package com.kd.dishi.recipes.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.kd.dishi.data.local.LocalRecipeProvider
@@ -30,7 +31,10 @@ class RecipeViewModel(
     }
 
     private fun initializeUIState() {
+        Log.d("KW", "curators : $recipeId")
         var recipe: Recipe = LocalRecipeProvider.recipeList[recipeId]
+        //Log.d("KW", "curators : ${recipe.curator}")
+        Log.d("KW", "comments : ${recipe.commentList}")
 
         _uiState.value = RecipeUiState(
             id = recipe.recipeId,

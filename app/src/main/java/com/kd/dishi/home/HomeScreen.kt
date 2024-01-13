@@ -37,6 +37,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.kd.dishi.AppVMProvider
 import com.kd.dishi.R
 import com.kd.dishi.components.COutlinedTextField
 import com.kd.dishi.components.PopularCurators
@@ -64,7 +65,7 @@ fun HomeScreen(
     onCuratorClick: (Int) -> Unit,
     onRecipeClick: (Int) -> Unit,
     addRecipeClick: () -> Unit,
-    viewModel: HomeViewModel = viewModel()
+    viewModel: HomeViewModel = viewModel(factory = AppVMProvider.Factory)
 ) {
     val homeUiState by viewModel.uiState.collectAsState()
 

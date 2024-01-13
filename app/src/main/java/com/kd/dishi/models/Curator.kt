@@ -8,6 +8,6 @@ data class Curator(
     @DrawableRes val curatorImage: Int,
     val firstName: String,
     val lastName: String,
+    val recipeList: List<Recipe>?,
     val password: String,
-    val recipeList: List<Recipe>?
 )

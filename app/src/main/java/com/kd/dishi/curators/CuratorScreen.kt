@@ -31,6 +31,7 @@ import com.kd.dishi.navigation.NavigationDestination
 import com.kd.dishi.R
 import com.kd.dishi.curators.viewmodel.CuratorViewModel
 import androidx.lifecycle.viewmodel.compose.*
+import com.kd.dishi.AppVMProvider
 import com.kd.dishi.components.CDivider
 import com.kd.dishi.components.RecipeRow
 
@@ -49,13 +50,13 @@ object CuratorDestination : NavigationDestination {
 @Composable
 fun CuratorScreen(
     modifier: Modifier = Modifier,
-    onRecipeClick: (Int) -> Unit,
-    viewModel: CuratorViewModel = viewModel(),
+    onRecipeClick: (Int) -> Unit = {},
+    viewModel: CuratorViewModel = viewModel(factory = AppVMProvider.Factory),
     navigateBack: () -> Unit
 ) {
     val curatorUiState by viewModel.uiState.collectAsState()
 
-    Scaffold (
+    Scaffold(
         topBar = {
             /*DisheyTopAppBar(
                 title = stringResource(id = CuratorScreenDestination.titleRes),
@@ -63,7 +64,7 @@ fun CuratorScreen(
                 navigateUp = navigateBack
             )*/
         }
-    ){
+    ) {
         Column(
             modifier = modifier
                 .fillMaxSize()
@@ -104,9 +105,9 @@ fun CuratorScreen(
                     style = MaterialTheme.typography.labelMedium
                 )
 
-                /*RecipeRow(
-                    recipes = curatorUiState.recipes!!
-                ) { onRecipeClick(it.recipeId) }*/
+                RecipeRow(
+                    recipes = curatorUiState.recipes ?: emptyList()
+                ) { onRecipeClick(it.recipeId) }
 
             }
         }
