@@ -1,21 +1,23 @@
 package com.kd.dishi.data.local
 
+import com.kd.dishi.models.Comment
+
 object LocalCommentProvider {
     val curator = LocalCuratorProvider
 
-   /* val comment1 = Comment(
+    val comment1 = Comment(
    "Comida interesante",
            curator.east
-        )*/
+        )
 
 
-    /*val comment2 = Comment(
+    val comment2 = Comment(
         "Comida favorita",
         curator.njogu
 
-    )*/
+    )
 
-    /*val comment3 = Comment(
+    val comment3 = Comment(
         "Yuck",
         curator.east
     )
@@ -33,5 +35,5 @@ object LocalCommentProvider {
     val comment7 = Comment(
         "Kinuthia. I see you",
        curator.njogu
-    )*/
+    )
 }

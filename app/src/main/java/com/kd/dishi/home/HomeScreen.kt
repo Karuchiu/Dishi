@@ -37,6 +37,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.kd.dishi.AppVMProvider
 import com.kd.dishi.R
 import com.kd.dishi.components.COutlinedTextField
 import com.kd.dishi.components.PopularCurators
@@ -45,8 +46,11 @@ import com.kd.dishi.home.viewmodel.HomeViewModel
 import com.kd.dishi.navigation.NavigationDestination
 
 object HomeDestination : NavigationDestination {
-    override val route = "home"
-    override val titleRes: Int = R.string.app_name
+    override val route: String
+        get() = "home"
+    override val titleRes: Int
+        get() = R.string.app_name
+
 }
 
 /*TODO
@@ -61,7 +65,7 @@ fun HomeScreen(
     onCuratorClick: (Int) -> Unit,
     onRecipeClick: (Int) -> Unit,
     addRecipeClick: () -> Unit,
-    viewModel: HomeViewModel = viewModel()
+    viewModel: HomeViewModel = viewModel(factory = AppVMProvider.Factory)
 ) {
     val homeUiState by viewModel.uiState.collectAsState()
 
