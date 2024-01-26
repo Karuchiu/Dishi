@@ -21,7 +21,7 @@ class HomeViewModel: ViewModel() {
         val recipeList: List<Recipe> = LocalRecipeProvider.recipeList
         val curatorList: List<Curator> = LocalCuratorProvider.curatorList
 
-        if (curatorList.isNotEmpty() && recipeList.isNotEmpty()) {
+        //if (curatorList.isNotEmpty() && recipeList.isNotEmpty()) {
             //Log.d("KW", "Test : ${curatorList[0].firstName}")
             //Log.d("KW", "TestR : ${curatorList[0].recipeList}")
 
@@ -29,12 +29,12 @@ class HomeViewModel: ViewModel() {
                 curatorList = curatorList,
                 popularRecipeList = recipeList
             )
-        } else {
+        /*} else {
             // Handle case where lists are empty, perhaps set default values or show an error
             // For example:
             _uiState.value = HomeUiState() // Set default state
             // Or show an error message to indicate empty data
-        }
+        }*/
     }
 }
 

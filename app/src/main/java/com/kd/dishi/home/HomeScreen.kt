@@ -65,7 +65,7 @@ fun HomeScreen(
     onCuratorClick: (Int) -> Unit,
     onRecipeClick: (Int) -> Unit,
     addRecipeClick: () -> Unit,
-    viewModel: HomeViewModel = viewModel(factory = AppVMProvider.Factory)
+    viewModel: HomeViewModel = viewModel()
 ) {
     val homeUiState by viewModel.uiState.collectAsState()
 

@@ -25,7 +25,7 @@ object LocalCuratorProvider {
             R.drawable.tabata,
             "Dan",
             "Njogu",
-            recipeList = listOf(LocalRecipeProvider.veggies),
+            recipeList = listOf(recipe.veggies),
             "njogu123"
         )
 

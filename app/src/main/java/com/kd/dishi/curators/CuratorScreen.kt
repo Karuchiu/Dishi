@@ -49,7 +49,6 @@ object CuratorDestination : NavigationDestination {
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun CuratorScreen(
-    modifier: Modifier = Modifier,
     onRecipeClick: (Int) -> Unit = {},
     viewModel: CuratorViewModel = viewModel(factory = AppVMProvider.Factory),
     navigateBack: () -> Unit
@@ -66,7 +65,7 @@ fun CuratorScreen(
         }
     ) {
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxSize()
                 .padding(top = 30.dp, bottom = 150.dp, start = 16.dp, end = 16.dp),
             verticalArrangement = Arrangement.SpaceEvenly
@@ -106,7 +105,7 @@ fun CuratorScreen(
                 )
 
                 RecipeRow(
-                    recipes = curatorUiState.recipes ?: emptyList()
+                    recipes = curatorUiState.recipes!!
                 ) { onRecipeClick(it.recipeId) }
 
             }
